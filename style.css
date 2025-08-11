@@ -1,0 +1,241 @@
+ body {
+  display: grid;
+  grid-template-areas: 
+  'header header'
+  'about about'
+  'servicios servicios'
+  'productos productos'
+  'ejemplos ejemplos'
+  'clientes clientes'
+  'footer footer';
+  grid-template-rows: 90px auto auto auto auto auto 75px;
+  grid-template-columns: 150px 1fr;
+  margin: 0;
+  width: 100vw;
+}
+
+@media  (min-width: 768px) {
+body { display: grid;
+  grid-template-areas: 
+  'header header'
+  'nav about'
+  'nav servicios'
+  'nav productos'
+  'nav ejemplos'
+  'nav clientes'
+  'footer footer';
+  grid-template-rows: 130px auto auto auto auto auto 75px;
+  grid-template-columns: 150px 1fr;
+  margin: 0;
+  width: 100vw;
+   }
+  }
+@media  (min-width: 768px) {
+    #navegador  {
+        display: none !important;
+    }
+}
+
+
+
+header {
+    grid-area: header;
+    background-color: rgb(19, 19, 51);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media  (min-width: 768px) {
+    header {
+    grid-area: header;
+    background-color: rgb(19, 19, 51);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: flex-start;
+}
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(19, 19, 51);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    align-content: center;
+    justify-content: flex-start;
+}
+ @media (min-width: 768px)   {
+    nav {
+    grid-area: nav;
+    background-color: rgb(142, 142, 176);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+ }}
+
+section#about {
+    grid-area: about;
+    background-color: yelow;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section#servicios {
+    grid-area: servicios;
+    background-color:darkorange;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section#productos {
+    grid-area: productos;
+    background-color:azure;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section#ejemplos {
+    grid-area: ejemplos;
+    background-color:cadetblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section#clientes {
+    grid-area: clientes;
+    background-color:black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+footer {
+    grid-area: footer;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 25px;
+}
+
+
+.yo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 80vw;
+    max-height: 95px;
+    justify-content: left;
+    align-items: center;
+    padding: 0;
+}
+@media (max-width: 767.98px) {
+    .yo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 95%;
+    max-width: 65%;
+    justify-content: center;
+    justify-self: center;
+    padding: 0;
+}
+}
+
+.yo img {
+    height: auto;
+    width: 100%;  
+}
+@media (min-width: 768px) {
+.yo img {
+    height: 90px;
+    width: auto;  
+}
+}
+
+a .botonDesplegable    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient( rgb(142, 142, 176), white);
+    height: 30px;
+    width: 140px;
+    margin: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(19, 19, 51);
+    border-radius: 3px;
+}
+
+a .botonDesplegableNav    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient( rgb(142, 142, 176), white);
+    height: 30px;
+    width: 110px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(19, 19, 51);
+    border-radius: 3px;
+}
+
+a .botonDesplegableNav:hover {
+     box-shadow: 5px 10px 0 0 grey;
+     width: 130px;
+     font-size: 18px;
+}
+
+#navLateral a {
+    text-decoration: none;
+}
+
+#navLateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    width: 130px;
+    gap: 10px;
+}
+
+#navegador a {
+    text-decoration: none;
+}
+
+section#about h1 {
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+section#about p {
+    margin-bottom: 8px;
+}
