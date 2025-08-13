@@ -32,10 +32,11 @@ body {
   'clientes clientes'
   'footer footer';
   grid-template-rows: 100px auto auto auto auto auto 150px;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 150px 1fr;
   margin: 0;
   width: 100vw;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  max-width: 1440;
 }
 
 @media  (min-width: 768px) {
@@ -68,21 +69,21 @@ header {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
 }
 
 @media  (min-width: 768px) {
     header {
     grid-area: header;
     background-color:var(--colorPrimario);
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: space-between;
     align-items: flex-start;
 }
 }
@@ -113,6 +114,7 @@ section#about {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 section#servicios {
@@ -122,22 +124,47 @@ section#servicios {
     flex-wrap: wrap;
 }
 
+#contServicios {
+    width: 80%;
+}
+
 #nuestrosServicios {
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 350px;
     height: auto;
 }
 
 section#productos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     grid-area: productos;
     justify-content: flex-start;
     align-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 425px) {
+section#productos {
+    grid-area: productos;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: left;
+}}
+
+@media (min-width: 1024px) {
 section#productos {
     grid-area: productos;
     justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: left;
+    gap: 30px;
 }}
 
 section#ejemplos {
@@ -150,6 +177,9 @@ section#ejemplos {
 }
 
 section#clientes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     grid-area: clientes;
     display: flex;
     flex-direction: column;
@@ -168,11 +198,21 @@ footer {
     padding: 10px 10px 10px 25px;
 }
 
+@media (min-width: 768px) {
+    footer {
+    grid-area: footer;
+    background-color: var(--colorPrimario);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    color: var(--colorSecundario);
+    padding: 10px 10px 10px 175px;
+    }
+}
 
     section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     padding-left: 20px;
     padding-right: 10px;
     padding-top: 10px;
@@ -181,9 +221,6 @@ footer {
 
 @media (min-width: 768px) {
 section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-left: 25px;
     padding-right: 20px;
     padding-top: 20px;
@@ -192,9 +229,6 @@ section {
 }
 @media (min-width: 1024px) {
 section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-left: 25px;
     padding-right: 20px;
     padding-top: 25px;
@@ -208,18 +242,27 @@ section {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-width: 65%;
-    max-height: 80px;
+    width: 176px;
+    height: 36px;
     justify-content: center;
     justify-self: center;
     padding: 0;
 }
 
+@media (min-width: 375px) {
+.yo {
+    width: 220px;
+    height: 45px;
+    justify-content: left;
+    align-items: left;
+    padding: 0;
+    margin: 0;
+}}
 
 @media (min-width: 768px) {
 .yo {
-    height: 95px;
-    width: 390px;
+    width: 465px;
+    height: 90px;
     justify-content: left;
     align-items: left;
     padding: 0;
@@ -228,15 +271,24 @@ section {
 
 
 .yo img {
-    max-width: 240px;
-    max-height: 58px; 
+    width: 176px;
+    height: 36px;
     margin-top: 20px;
 }
 
+@media (min-width: 375px) {
+.yo img {
+    width: 220px;
+    height: 45px;
+    margin-top: 0; 
+}}
+
+
 @media (min-width: 768px) {
 .yo img {
-    max-width: 390px;
-    height: 80px;  
+    width: 465px;
+    height: 90px;
+    margin-top: 0; 
 }
 }
 
@@ -292,10 +344,9 @@ a .botonDesplegableNav:hover {
     text-decoration: none;
 }
 
-@media (min-width: 768px) {
 #tituloAbout2 {
-    width: 100%;
-}}
+    max-width: 80%;
+}
 
 @media (max-width: 1023px) {
 #tituloAbout2 #h1b {
@@ -341,13 +392,13 @@ section#about #tituloAbout2 #h1b {
 }
 
 #vehiculos {
-    width: 350px;
+    max-width: 250px;
     height: auto;
 }
     
 @media (min-width: 920px) {
     #vehiculos {
-    width: 420px;
+    max-width: 400px;
     height: auto;
 }}
     
@@ -362,16 +413,7 @@ section#about #tituloAbout2 #h1b {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-#contTextoYcarouselAbout {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
+    width: 95%;
 }
 
 section#about p {
@@ -379,14 +421,29 @@ section#about p {
 }
 
 #textoAbout {
-    width: 295px;
+    max-width: 295px;
     margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+    #textoAbout {
+    max-width: 280px;
+    margin-right: 0;
+}
+}
+
+@media (min-width: 1105px) {
+    #textoAbout {
+    max-width: 410px;
+    margin-right: 0;
+}
 }
 
 @media (min-width: 1440px) {
     #textoAbout {
-    width: 400px;
+    max-width: 500px;
     margin-right: 5px;
+    font-size: 20px;
 }
 }
 
@@ -394,12 +451,24 @@ section#about p {
 
 .flip-card {
   background-color: transparent;
-  width: 190px;
-  height: 243px;
+  width: 180px;
+  height: 238px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   text-align: left;
+  font-size: 14px;
 }
+
+@media (min-width: 920px) {
+    .flip-card {
+  background-color: transparent;
+  width: 234px;
+  height: 309px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  text-align: left;
+  font-size: 16px;
+}}
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
@@ -412,9 +481,15 @@ section#about p {
 }
 
 .flip-card-front img {
-    width: 190px;
-    height: 243px;
+    width: 180px;
+    height: 238px;
 }
+
+@media (min-width: 920px) {    
+.flip-card-front img {
+  width: 234px;
+  height: 309px;
+}}
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
@@ -424,15 +499,24 @@ section#about p {
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 190px;
-  height: 243px;
+  width: 180px;
+  height: 238px;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 
+@media (min-width: 920px) {    
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 234px;
+  height: 309px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}}
+
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: var(--colorSecundario));
+  background-color: var(--colorSecundario);
   color: var(--colorPrimario);
   padding: 0;
 }
@@ -455,13 +539,18 @@ section#about p {
     margin-bottom: 5px;
 }
 
+#ejemplos {
+    max-width: 990px;
+    position: relative;
+}
+
 footer p {
      text-decoration: none;
      color: var(colorSecundario);
 }
 
 .divFooter {
-    width: 150px;
+    width: 200px;
     height: 80px;
 }
 
@@ -469,4 +558,24 @@ footer p {
     margin: 0;
 }
 
-.divFooter i border/sizing
+#footerGrande {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+#footerGrande {
+    display: none;
+}}
+
+@media (min-width: 768px) {
+#footerChico {
+    display: none;
+}}
+
+#divFooter p {
+    font-size: 14px;
+}
